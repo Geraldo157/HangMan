@@ -35,7 +35,7 @@ export function HangmanDrawing(){
             {LEFT_LEG}
             <div className="h-[50px] w-3 bg-black absolute top-0 right-0"/>
             <div className="h-3 w-[200px] bg-black ml-[122px]"/>
-            <div className="h-[400px] w-3 bg-black ml-[122px]"/>
+            <div className="h-[300px] w-3 bg-black ml-[122px]"/>
             <div className="h-3 w-64 bg-black"/>
         </div>
     )

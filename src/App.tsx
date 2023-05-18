@@ -13,17 +13,28 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
 
   return (
-  <div className="flex max-w-lg flex-col gap-8 m-auto items-center">
-    <div className="text-4xl text-center ">
-      Lose
-      Win
+    <div
+    className="max-w-[800px] mx-auto flex flex-col gap-8 items-center"
+    /*style={{
+      maxWidth: "800px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "2rem",
+      margin: "0 auto",
+      alignItems: "center",
+      
+    }}*/
+  >
+    <div style={{ fontSize: "2rem", textAlign: "center" }}>
+      Win lose
     </div>
-    <HangmanDrawing />
-    <HangmanWord />
-    <div className="self-stretch">
-      <HangmanKeyboard />
+    <HangmanDrawing/>
+    <HangmanWord
+    />
+    <div style={{ alignSelf: "stretch" }}>
+      <HangmanKeyboard
+      />
     </div>
-
   </div>)
 }
 
