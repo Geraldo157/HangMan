@@ -33,19 +33,23 @@ function App() {
     return () =>{
       document.removeEventListener("keypress", handler)
     }
-  }, [])
+  }, [guessedLetters])
+
+  const isLoser  = incorrectLetters.length >= 6
+  const isWinner = wordGuess.split("").every(letter => guessedLetters.includes(letter))
 
   return (
     <div
     className="max-w-[800px] mx-auto flex flex-col gap-8 items-center"
   >
     <div style={{ fontSize: "2rem", textAlign: "center" }}>
-      Win lose
+      {isWinner && "YOU WIN! Refresh to try again!"}
+      {isLoser && "More luck next time! Refresh to try again!"}
     </div>
     <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
     <HangmanWord guessedLetters = {guessedLetters} wordToGuess={wordGuess}/>
     <div style={{ alignSelf: "stretch" }}>
-      <HangmanKeyboard/>
+      <HangmanKeyboard addGuessedLetters={addGuessesLetter}/>
     </div>
   </div>)
 }
